@@ -4,12 +4,18 @@ const firebase = require('firebase-admin');
 
 firebase.initializeApp({
     credential: firebase.credential.cert({
+        type: process.env.TYPE,
         project_id: process.env.PROJECTID,
         private_key_id: process.env.PRIVATEKEYID,
         private_key: process.env.PRIVATEKEY
-            ? process.env.PRIVATEKEY.replace(/\\n/g, '\n')
+            ? process.env.PRIVATEKEY.replace(/\\n/g, "\n")
             : undefined,
         client_email: process.env.CLIENTEMAIL,
+        client_id: process.env.CLIENTID,
+        auth_uri: process.env.AUTHURI,
+        token_uri: process.env.TOKENURI,
+        auth_provider_x509_cert_url: process.env.auth_provider_x509_cert_url,
+        client_x509_cert_url: process.env.client_x509_cert_url
     })
 })
 
