@@ -7,7 +7,7 @@ firebase.initializeApp({
         type: process.env.TYPE,
         project_id: process.env.PROJECTID,
         private_key_id: process.env.PRIVATEKEYID,
-        private_key: process.env.PRIVATEKEY,
+        private_key: process.env.PRIVATEKEY.replace(/\\n/gm, "\n"),
         client_email: process.env.CLIENTEMAIL,
         client_id: process.env.CLIENTID,
         auth_uri: process.env.AUTHURI,
@@ -16,6 +16,7 @@ firebase.initializeApp({
         client_x509_cert_url: process.env.client_x509_cert_url
     })
 })
+console.log(process.env.PRIVATEKEY.replace(/\\n/gm, "\n"));
 
 const db = firebase.firestore();
 module.exports = db;
