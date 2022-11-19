@@ -16,7 +16,6 @@ firebase.initializeApp({
         client_x509_cert_url: process.env.client_x509_cert_url
     })
 })
-console.log(process.env.PRIVATEKEY.replace(/\\n/gm, "\n"));
 
 const db = firebase.firestore();
 module.exports = db;
