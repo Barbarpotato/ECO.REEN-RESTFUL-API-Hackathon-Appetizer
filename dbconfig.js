@@ -7,7 +7,7 @@ firebase.initializeApp({
         project_id: process.env.PROJECTID,
         private_key_id: process.env.PRIVATEKEYID,
         private_key: process.env.PRIVATEKEY
-            ? process.env.PRIVATEKEY.replace(/\\n/g, "\n")
+            ? process.env.PRIVATEKEY.replace(/\\n/g, '\n')
             : undefined,
         client_email: process.env.CLIENTEMAIL,
     })
