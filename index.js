@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const transportation = require('./routes/transportation');
+const machine = require('./routes/machine');
 const analytics = require('./routes/analytics');
 
 const app = express();
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/transportation', transportation);
+app.use('/machine', machine);
 app.use('/analytics', analytics);
 
 const PORT = process.env.PORT || 8008;
