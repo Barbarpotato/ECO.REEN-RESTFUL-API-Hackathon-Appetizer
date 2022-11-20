@@ -25,7 +25,7 @@ router.route('')
             if (!dateTime.includes(doc.data().Date)) {
                 fuelType.push(doc.data().type);
             }
-            totalObject += doc.data().total;
+            totalObject += parseInt(doc.data().total);
         })
         for (let i = 0; i < dateTime.length; i++) {
             const snapDate = await getEmissions.where('Date', '==', dateTime[i]).get();
