@@ -1,13 +1,13 @@
 const express = require('express');
 const tf = require('@tensorflow/tfjs');
-const prediction = require('../dbconfig.js');
+const db = require('../dbconfig.js');
 const uniqid = require('uniqid');
 
 const router = express.Router();
 
 router.route('')
     .get(async (req, res) => {
-        const getFile = prediction.collection('prediction');
+        const getFile = db.collection('prediction');
         const snapshot = await getFile.get();
         const data = []
         snapshot.forEach(doc => {
@@ -45,9 +45,10 @@ router.route('')
         const predictedValue4 = result4.arraySync()[0][0];
         const predictedValue5 = result5.arraySync()[0][0];
 
-        await prediction.collection('prediction').doc(uniqid()).set({
+        await db.collection('prediction').doc(uniqid()).set({
             'reguler': predictedValue1, 'premium': predictedValue2, 'ethanol': predictedValue3,
-            'diesel': predictedValue4, 'natural': predictedValue5
+            'diesel': predictedValue4, 'natural': predictedValue5,
+            'type': req.body.type, 'total': req.body.total
         });
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
