@@ -46,8 +46,11 @@ router.route('')
         const predictedValue5 = result5.arraySync()[0][0];
 
         await db.collection('prediction').doc(uniqid()).set({
-            'reguler': predictedValue1, 'premium': predictedValue2, 'ethanol': predictedValue3,
-            'diesel': predictedValue4, 'natural': predictedValue5,
+            'reguler': predictedValue1 * req.body.total,
+            'premium': predictedValue2 * req.body.total,
+            'ethanol': predictedValue3 * req.body.total,
+            'diesel': predictedValue4 * req.body.total,
+            'natural': predictedValue5 * req.body.total,
             'type': req.body.type, 'total': req.body.total
         });
         res.statusCode = 200;

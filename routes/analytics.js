@@ -22,6 +22,11 @@ router.route('')
             }
         });
         snapshotTrans.forEach(doc => {
+            totalEmissions += doc.data().diesel;
+            totalEmissions += doc.data().ethanol;
+            totalEmissions += doc.data().natural;
+            totalEmissions += doc.data().premium;
+            totalEmissions += doc.data().reguler;
             if (!dateTime.includes(doc.data().Date)) {
                 fuelType.push(doc.data().type);
             }
