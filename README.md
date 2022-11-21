@@ -2,10 +2,10 @@
 This is the ECO.REEEN API project from APPETIZER Hackathon
 
 ### Accessing the Machine Json File
-You can visit this exact endpoint: https://ecoren-api.vercel.app/machine with GET method to see the output of calculation emissions trough the ecoloop api
+You can visit this exact endpoint: https://ecoren-api.vercel.app/machine with GET method to see the output of calculation emissions trough the Ecoloop Api. (Visit this link for further information: https://hanaloop.gitlab.io/pp/ecoloop-devportal/docs/intro)
 
 ### Accessing Analytics Json file
-You can visit this exact endpoint: https://ecoren-api.vercel.app/analytics with GET method to see the output of total emissions of some dates, finance, total object, etc.
+You can visit this exact endpoint: https://ecoren-api.vercel.app/analytics with GET method to see the output of total emissions of some dates, total CO2, total CH4, total N20, finance, total object, recover, etc.
 
 ### Accessing comparison Json file
 You can visit this exact endpoint: https://ecoren-api.vercel.app/comparison with GET method to see the comparison of emission(CO2, N20, CH4, CO2EQ) between 4 different fuel type, i.e gas diesel-oil, Sub-Bituminous Coal, Other Bituminous Coal and biodiesel.
