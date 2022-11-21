@@ -51,7 +51,8 @@ router.route('')
             'ethanol': predictedValue3 * req.body.total,
             'diesel': predictedValue4 * req.body.total,
             'natural': predictedValue5 * req.body.total,
-            'type': req.body.type, 'total': req.body.total
+            'type': req.body.type, 'total': req.body.total,
+            "Date": req.body.date
         });
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
