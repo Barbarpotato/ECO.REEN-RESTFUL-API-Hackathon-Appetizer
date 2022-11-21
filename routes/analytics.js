@@ -53,7 +53,8 @@ router.route('')
             data.push({
                 Date: dateTime[i], totalco2: co2, totalch4: ch4, totaln20: n20, totalco2eq: co2eq,
                 totalEmissions: totalEmissions, totalObject: totalObject,
-                finance: totalEmissions * 30, activityObject: activityObject, fuelType: fuelType
+                finance: totalEmissions * 30, activityObject: activityObject, fuelType: fuelType,
+                recover: parseInt(totalEmissions / 0.027)
             });
             totalEmissions = 0;
             totalObject = 0;
